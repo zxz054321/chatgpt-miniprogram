@@ -1,0 +1,7 @@
+page {
+  box-sizing: border-box;
+  // compatible with iOS <11.2
+  padding-bottom: calc(constant(safe-area-inset-bottom) - 10px);
+  // compatible with iOS >= 11.2
+  padding-bottom: calc(env(safe-area-inset-bottom) - 10px);
+}

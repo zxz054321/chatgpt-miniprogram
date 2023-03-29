@@ -1,0 +1,14 @@
+{
+  "window": {
+    "navigationBarTitleText": "GPro",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#343541",
+    "backgroundTextStyle": "light"
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "pages": [
+    "pages/index/index"
+  ],
+  "usingComponents": {}
+}

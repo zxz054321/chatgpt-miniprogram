@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-footer": "tdesign-miniprogram/footer/footer",
+    "t-loading": "tdesign-miniprogram/loading/loading"
+  }
+}

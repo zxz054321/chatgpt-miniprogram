@@ -1,0 +1,77 @@
+<scroll-view
+  class="page-content scroll"
+  scroll-y="true"
+  scroll-into-view="scroll-mark-{{$conversation.length}}"
+  enable-flex
+>
+  <view wx:if="{{showStartPage}}" class="getting-started">
+    <view class="head">
+      <t-icon class="icon" name="precise-monitor" size="24"/>
+      <view class="text">示例</view>
+    </view>
+    <view class="desc" bind:tap="onTapExample" data-prompt="用简单的话解释量子计算">
+      “用简单的话解释量子计算” →
+    </view>
+    <view class="desc" bind:tap="onTapExample" data-prompt="有关于庆祝一个 10 岁生日的创意吗？">
+      “有关于庆祝一个 10 岁生日的创意吗？” →
+    </view>
+    <view class="desc" bind:tap="onTapExample" data-prompt="如何在 JavaScript 中发送 HTTP 请求？">
+      “如何在 JavaScript 中发送 HTTP 请求？” →
+    </view>
+    <view class="head">
+      <t-icon class="icon" name="app" size="24"/>
+      <view class="text">能力</view>
+    </view>
+    <view class="desc">记住用户在对话中说过的话</view>
+    <view class="desc">允许用户提供跟进更正</view>
+    <view class="desc">经过训练，会拒绝不适当的请求</view>
+    <view class="head">
+      <t-icon class="icon" name="error-circle" size="24"/>
+      <view class="text">限制</view>
+    </view>
+    <view class="desc">偶尔会生成不正确的信息</view>
+    <view class="desc">偶尔会产生有害的指令或有偏见的内容</view>
+    <view class="desc">对 2021 年后的世界和事情了解有限</view>
+  </view>
+  <view wx:else class="conversation">
+    <view wx:for="{{$conversation}}" wx:key="index" class="message {{item[0]}}">
+      <t-loading wx:if="{{item[2].isPending}}" theme="spinner" size="40rpx" class="wrapper"/>
+      <text
+        wx:if="{{!item[2].isPending && item[2].isFailed}}"
+        class="failed"
+      >遇到了一些问题。如果问题仍然存在，请通过“右上角菜单→反馈与投诉→功能异常”与我们联系。</text>
+      <text
+        wx:else
+        bind:tap="onTapMessage"
+        data-i="{{index}}"
+        user-select
+      >{{item[1]}}</text>
+    </view>
+    <view id="scroll-mark-{{$conversation.length}}"/>
+  </view>
+</scroll-view>
+<view class="page-bottom">
+  <view class="textarea-group">
+    <t-textarea
+      class="textarea"
+      model:value="{{prompt}}"
+      bind:focus="onKeyboardPullUp"
+      bind:blur="onKeyboardDismiss"
+      show-confirm-bar="{{false}}"
+      adjust-position="{{false}}"
+      disable-default-padding
+      autosize
+    />
+    <view class="btn-container">
+      <t-button
+        bind:tap="onTapSendButton"
+        icon="arrow-up"
+        shape="square"
+        size="small"
+        disabled="{{ prompt==='' || isGenerating }}"
+      />
+    </view>
+  </view>
+  <t-footer text="GPT-3.5 免费研究预览版本，您的反馈将帮助我们改进。"/>
+</view>
+<view style="padding-bottom: {{keyboardHeight}};"/>

@@ -1,0 +1,87 @@
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 8px;
+  height: 1px; // scroll view style hack
+
+  .getting-started {
+    .util-breathing-space;
+
+    .head {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 16px 0;
+      font-size: 16px;
+
+      .icon {
+        margin-right: 8px;
+      }
+    }
+
+    .desc {
+      margin-bottom: 12px;
+      padding: 12px;
+      border-radius: 0.375rem;
+      background: rgb(247, 247, 248);
+      text-align: center;
+      font-size: 14px;
+    }
+  }
+
+  .conversation {
+    .message {
+      padding: 16px;
+    }
+
+    .message.assistant {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgb(247, 247, 248);
+
+      .failed {
+        color: #ef4146;
+      }
+    }
+  }
+}
+
+.page-bottom {
+  .util-breathing-space;
+
+  .textarea-group {
+    display: flex;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.375rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+    .textarea {
+      flex: 1;
+      padding: 8rpx;
+      border-radius: 0.375rem;
+      max-height: 50vh;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .t-icon-base {
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+.util-breathing-space {
+  padding: 0 8px;
+}
