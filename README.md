@@ -1,6 +1,6 @@
 # ChatGPT 微信小程序
 
-ChatGPT 是一个基于大型语言模型的自然语言处理平台，提供了强大的自然语言处理和自然语言生成功能。本微信小程序实现了 ChatGPT 官网移动版本的对话功能，方便用户在微信上使用 ChatGPT 进行各种类型的自然语言交互。
+ChatGPT 是一个基于大型语言模型的自然语言处理平台，提供了强大的自然语言处理和自然语言生成功能。本微信小程序实现了 ChatGPT 官网移动版本的对话功能，方便用户在微信上使用 ChatGPT 进行各种类型的自然语言交互。本微信小程序可以与 [ChatGPT WebSocket 服务端](https://github.com/zxz054321/chatgpt-websocket-server) 搭配使用。
 
 本文档由 ChatGPT 生成和润色。
 
