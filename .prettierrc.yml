@@ -1,0 +1,16 @@
+overrides:
+  - files: "*.json,.*rc"
+    options:
+      parser: json
+  - files: "*.{wxml,html}"
+    options:
+      parser: html
+      htmlWhitespaceSensitivity: strict
+      printWidth: 999,
+      semi: false
+  - files: "*.wxs"
+    options:
+      parser: babel
+  - files: "*.{wxss,less}"
+    options:
+      parser: less
