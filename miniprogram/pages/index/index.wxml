@@ -51,17 +51,19 @@
   </view>
 </scroll-view>
 <view class="page-bottom">
-  <view class="textarea-group">
-    <t-textarea
-      class="textarea"
-      model:value="{{prompt}}"
-      bind:focus="onKeyboardPullUp"
-      bind:blur="onKeyboardDismiss"
-      show-confirm-bar="{{false}}"
-      adjust-position="{{false}}"
-      disable-default-padding
-      autosize
-    />
+  <view class="input-group">
+    <view class="textarea-container">
+      <t-textarea
+        class="textarea"
+        model:value="{{prompt}}"
+        bind:focus="onKeyboardPullUp"
+        bind:blur="onKeyboardDismiss"
+        show-confirm-bar="{{false}}"
+        adjust-position="{{false}}"
+        disable-default-padding
+        autosize
+      />
+    </view>
     <view class="btn-container">
       <t-button
         bind:tap="onTapSendButton"
